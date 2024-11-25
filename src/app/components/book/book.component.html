@@ -1,0 +1,37 @@
+<nav class="navbar">
+    <div class="navbar__brand">Books List</div>
+    <div class="navbar__view-controls">
+      <button 
+        [class.navbar__button--active]="currentView === 'mobile'"
+        (click)="setView('mobile')" 
+        class="navbar__button">
+        Mobile
+      </button>
+      <button 
+        [class.navbar__button--active]="currentView === 'tablet'"
+        (click)="setView('tablet')" 
+        class="navbar__button">
+        Tablet
+      </button>
+      <button 
+        [class.navbar__button--active]="currentView === 'desktop'"
+        (click)="setView('desktop')" 
+        class="navbar__button">
+        Desktop
+      </button>
+    </div>
+  </nav>
+  
+  <div class="book-grid" [class]="'book-grid--' + currentView">
+    <div class="book-card" *ngFor="let book of books">
+      <div class="book-card__image">
+        <img [src]="book.image" [alt]="book.name">
+      </div>
+      <div class="book-card__content">
+        <h3 class="book-card__title">{{ book.name }}</h3>
+        <p class="book-card__description">{{ book.description }}</p>
+        <p class="book-card__price">PHP {{ book.price | currency:'PHP':'symbol-narrow':'1.0-0' }}</p>
+        <button class="book-card__button">Add to Cart</button>
+      </div>
+    </div>
+  </div>

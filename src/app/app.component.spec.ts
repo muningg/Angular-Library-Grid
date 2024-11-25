@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'Angular-Library-Grid' title`, () => {
+  it(`should have the 'Angular_Components' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Angular-Library-Grid');
+    expect(app.title).toEqual('Angular_Components');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Angular-Library-Grid');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Angular_Components');
   });
 });
